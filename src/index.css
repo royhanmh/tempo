@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans:
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "Space Mono", "JetBrains Mono", monospace;
+
+  --color-tempo-bg: #f5f4f0;
+  --color-tempo-card: #ffffff;
+  --color-tempo-border: #e5e3dc;
+  --color-tempo-subtle: #ecebe5;
+  --color-tempo-text: #1c1d21;
+  /* #626671 passes AA 4.5:1 on bg (#F5F4F0), card, and subtle fills */
+  --color-tempo-muted: #626671;
+  --color-tempo-darkmuted: #9ca0aa;
+  --color-tempo-darkbg: #121316;
+  --color-tempo-darkcard: #1a1b1e;
+  --color-tempo-darkborder: #292b31;
+  --color-tempo-darksubtle: #22242a;
+}
+
+/* Dark mode via .dark class (Tailwind v4 custom variant) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+ * Alternate themes remap both tempo variable sets so every
+ * `bg-tempo-x dark:bg-tempo-darkx` pair resolves to one palette.
+ * Dark-mode themes additionally receive the .dark class on <html>.
+ */
+.theme-nordic {
+  --color-tempo-bg: #0f1522;
+  --color-tempo-card: #171f31;
+  --color-tempo-border: #27324a;
+  --color-tempo-subtle: #1c263c;
+  --color-tempo-text: #e7ecf7;
+  /* #93a0ba passes AA 4.5:1 on nordic bg (#0F1522), card, and subtle fills */
+  --color-tempo-muted: #93a0ba;
+  --color-tempo-darkbg: #0f1522;
+  --color-tempo-darkcard: #171f31;
+  --color-tempo-darkborder: #27324a;
+  --color-tempo-darksubtle: #1c263c;
+  --color-tempo-darkmuted: #93a0ba;
+}
+
+.theme-paper {
+  --color-tempo-bg: #f3eee4;
+  --color-tempo-card: #fbf8f1;
+  --color-tempo-border: #ded4bf;
+  --color-tempo-subtle: #eae3d2;
+  --color-tempo-text: #2f2b23;
+  /* #6d6452 passes AA 4.5:1 on paper bg (#F3EEE4), card, and subtle fills */
+  --color-tempo-muted: #6d6452;
+  --color-tempo-darkbg: #f3eee4;
+  --color-tempo-darkcard: #fbf8f1;
+  --color-tempo-darkborder: #ded4bf;
+  --color-tempo-darksubtle: #eae3d2;
+  --color-tempo-darkmuted: #6d6452;
+}
+
+.theme-forest {
+  --color-tempo-bg: #101712;
+  --color-tempo-card: #17211a;
+  --color-tempo-border: #26372c;
+  --color-tempo-subtle: #1c291f;
+  --color-tempo-text: #e4efe6;
+  /* #94ac9c passes AA 4.5:1 on forest bg (#101712), card, and subtle fills */
+  --color-tempo-muted: #94ac9c;
+  --color-tempo-darkbg: #101712;
+  --color-tempo-darkcard: #17211a;
+  --color-tempo-darkborder: #26372c;
+  --color-tempo-darksubtle: #1c291f;
+  --color-tempo-darkmuted: #94ac9c;
+}
+
+.theme-sakura {
+  --color-tempo-bg: #faf1f2;
+  --color-tempo-card: #fffdfd;
+  --color-tempo-border: #ecd6da;
+  --color-tempo-subtle: #f6e7e9;
+  --color-tempo-text: #30262a;
+  /* #756069 passes AA 4.5:1 on sakura bg (#FAF1F2), card, and subtle fills */
+  --color-tempo-muted: #756069;
+  --color-tempo-darkbg: #faf1f2;
+  --color-tempo-darkcard: #fffdfd;
+  --color-tempo-darkborder: #ecd6da;
+  --color-tempo-darksubtle: #f6e7e9;
+  --color-tempo-darkmuted: #756069;
+}
+
+body {
+  font-family: var(--font-sans);
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.font-mono-num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.03em;
+}
+
+.transition-ui {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #d1d0c9;
+  border-radius: 9999px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #33363f;
+}
+
+.progress-ring-circle {
+  transition: stroke-dashoffset 0.35s ease-in-out;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
