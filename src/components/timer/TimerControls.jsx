@@ -6,9 +6,9 @@ export default function TimerControls({ timer, size = "hero" }) {
   const running = timer.status === "running";
 
   if (size === "card") {
-    // p-2 wrapper keeps the visual at w-8 while giving a 44px+ touch target
+    // 44px minimum touch target
     return (
-      <div className="-m-2 p-3">
+      <div className="flex items-center justify-center min-w-[44px] min-h-[44px]">
         {running ? (
           <button
             onClick={(e) => {
@@ -44,8 +44,8 @@ export default function TimerControls({ timer, size = "hero" }) {
         aria-label="Reset timer"
         className={
           size === "focus"
-            ? "w-12 h-12 rounded-full bg-tempo-card dark:bg-tempo-darkcard border border-tempo-border dark:border-tempo-darkborder flex items-center justify-center text-tempo-text dark:text-gray-200 hover:bg-tempo-subtle dark:hover:bg-tempo-darksubtle transition-ui shadow-sm"
-            : "w-12 h-12 rounded-full bg-tempo-subtle dark:bg-tempo-darksubtle border border-tempo-border dark:border-tempo-darkborder flex items-center justify-center text-tempo-text dark:text-gray-200 hover:bg-tempo-border dark:hover:bg-tempo-darkborder transition-ui"
+            ? "min-w-[44px] min-h-[44px] w-12 h-12 rounded-full bg-tempo-card dark:bg-tempo-darkcard border border-tempo-border dark:border-tempo-darkborder flex items-center justify-center text-tempo-text dark:text-gray-200 hover:bg-tempo-subtle dark:hover:bg-tempo-darksubtle transition-ui shadow-sm"
+            : "min-w-[44px] min-h-[44px] w-12 h-12 rounded-full bg-tempo-subtle dark:bg-tempo-darksubtle border border-tempo-border dark:border-tempo-darkborder flex items-center justify-center text-tempo-text dark:text-gray-200 hover:bg-tempo-border dark:hover:bg-tempo-darkborder transition-ui"
         }
       >
         <RotateCcw className="w-5 h-5" />
@@ -56,7 +56,7 @@ export default function TimerControls({ timer, size = "hero" }) {
           onClick={() => pauseTimer(timer.id)}
           title="Pause [Space]"
           aria-label="Pause timer"
-          className="w-16 h-16 rounded-full bg-tempo-text text-tempo-bg dark:bg-white dark:text-tempo-darkbg flex items-center justify-center shadow-md hover:scale-105 transition-ui"
+          className="min-w-[44px] min-h-[44px] w-16 h-16 rounded-full bg-tempo-text text-tempo-bg dark:bg-white dark:text-tempo-darkbg flex items-center justify-center shadow-md hover:scale-105 transition-ui"
         >
           <Pause className="w-7 h-7 fill-current" />
         </button>
@@ -65,7 +65,7 @@ export default function TimerControls({ timer, size = "hero" }) {
           onClick={() => startTimer(timer.id)}
           title="Start [Space]"
           aria-label="Start timer"
-          className="w-16 h-16 rounded-full bg-tempo-text text-tempo-bg dark:bg-white dark:text-tempo-darkbg flex items-center justify-center shadow-md hover:scale-105 transition-ui"
+          className="min-w-[44px] min-h-[44px] w-16 h-16 rounded-full bg-tempo-text text-tempo-bg dark:bg-white dark:text-tempo-darkbg flex items-center justify-center shadow-md hover:scale-105 transition-ui"
         >
           <Play className="w-7 h-7 fill-current ml-1" />
         </button>
@@ -77,8 +77,8 @@ export default function TimerControls({ timer, size = "hero" }) {
         aria-label="Delete timer"
         className={
           size === "focus"
-            ? "w-12 h-12 rounded-full bg-tempo-card dark:bg-tempo-darkcard border border-tempo-border dark:border-tempo-darkborder flex items-center justify-center text-tempo-muted dark:text-tempo-darkmuted hover:text-red-500 hover:bg-tempo-subtle dark:hover:bg-tempo-darksubtle transition-ui shadow-sm"
-            : "w-12 h-12 rounded-full bg-tempo-subtle dark:bg-tempo-darksubtle border border-tempo-border dark:border-tempo-darkborder flex items-center justify-center text-tempo-muted dark:text-tempo-darkmuted hover:text-red-500 hover:bg-tempo-border dark:hover:bg-tempo-darkborder transition-ui"
+            ? "min-w-[44px] min-h-[44px] w-12 h-12 rounded-full bg-tempo-card dark:bg-tempo-darkcard border border-tempo-border dark:border-tempo-darkborder flex items-center justify-center text-tempo-muted dark:text-tempo-darkmuted hover:text-red-500 hover:bg-tempo-subtle dark:hover:bg-tempo-darksubtle transition-ui shadow-sm"
+            : "min-w-[44px] min-h-[44px] w-12 h-12 rounded-full bg-tempo-subtle dark:bg-tempo-darksubtle border border-tempo-border dark:border-tempo-darkborder flex items-center justify-center text-tempo-muted dark:text-tempo-darkmuted hover:text-red-500 hover:bg-tempo-border dark:hover:bg-tempo-darkborder transition-ui"
         }
       >
         <Trash2 className="w-5 h-5" />

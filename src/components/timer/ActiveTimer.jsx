@@ -26,7 +26,7 @@ export default function ActiveTimer({ timer }) {
           onClick={() => navigate(`/focus/${timer.id}`)}
           title="Focus Mode [F]"
           aria-label="Open focus mode"
-          className="p-3.5 -m-1 rounded-full hover:bg-tempo-subtle dark:hover:bg-tempo-darksubtle text-tempo-muted dark:text-tempo-darkmuted hover:text-tempo-text transition-ui"
+          className="min-w-[44px] min-h-[44px] p-3.5 -m-1 rounded-full hover:bg-tempo-subtle dark:hover:bg-tempo-darksubtle text-tempo-muted dark:text-tempo-darkmuted hover:text-tempo-text transition-ui"
         >
           <Maximize2 className="w-4 h-4" />
         </button>

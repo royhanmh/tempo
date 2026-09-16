@@ -27,7 +27,7 @@ export default function Modal({ title, onClose, children }) {
           <button
             onClick={onClose}
             aria-label="Close modal"
-            className="w-11 h-11 rounded-full bg-tempo-subtle dark:bg-tempo-darksubtle flex items-center justify-center text-tempo-muted dark:text-tempo-darkmuted hover:text-tempo-text dark:hover:text-white transition-ui"
+            className="min-w-[44px] min-h-[44px] rounded-full bg-tempo-subtle dark:bg-tempo-darksubtle flex items-center justify-center text-tempo-muted dark:text-tempo-darkmuted hover:text-tempo-text dark:hover:text-white transition-ui"
           >
             <X className="w-4 h-4" />
           </button>

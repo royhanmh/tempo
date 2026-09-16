@@ -93,7 +93,7 @@ export default function Home() {
         </div>
       )}
 
-      <aside className="hidden md:flex md:w-64 border-r border-tempo-border dark:border-tempo-darkborder bg-tempo-card dark:bg-tempo-darkcard flex-col justify-between p-6 shrink-0 sticky top-0 h-screen">
+      <aside className="hidden md:flex md:w-56 border-r border-tempo-border dark:border-tempo-darkborder bg-tempo-card dark:bg-tempo-darkcard flex-col justify-between p-6 shrink-0 sticky top-0 h-screen">
         <div className="space-y-8">
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-full bg-tempo-text dark:bg-white text-tempo-bg dark:text-tempo-darkbg font-bold text-sm flex items-center justify-center font-mono">
@@ -182,7 +182,7 @@ export default function Home() {
                       </p>
                     </div>
                   ) : (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
                       {filteredTimers.map((timer) => (
                         <TimerCard key={timer.id} timer={timer} />
                       ))}

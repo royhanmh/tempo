@@ -46,7 +46,7 @@ export default function App() {
       if (e.key === "/") {
         e.preventDefault();
         document.querySelector('input[aria-label="Search timers"]')?.focus();
-      } else if (e.code === "Space") {
+      } else if (e.code === "Space" || e.key === " ") {
         e.preventDefault();
         if (!active) return;
         active.status === "running"
